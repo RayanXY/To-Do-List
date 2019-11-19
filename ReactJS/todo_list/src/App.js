@@ -5,9 +5,9 @@ import TodoList from './components/TodoList';
 import AddTodoItem from './components/AddTodoItem';
 
 const staticList = [
-    {id: 1, task: 'Um', done: true},
+    {id: 1, task: 'Um', done: false},
     {id: 2, task: 'Dois', done: false},
-    {id: 3, task: 'Três', done: true},
+    {id: 3, task: 'Três', done: false},
     {id: 4, task: 'Quatro', done: false},
 ];
 
@@ -48,11 +48,17 @@ class App extends React.Component {
 
     /* 
      * ITEM FEITO
-     * 
+     * Atualiza a tarefa para 'feita'
      * @param id - O ID da tarefa concluída
      */
     doneItem = (id) => {
-        alert("ID: " + this.state.list[id].id + "Taks: " + this.state.list[id].task + " Done: " + this.state.list[id].done);
+        const newList = [...this.state.list].map( l => Object.assign({}, l));
+        newList.forEach((item) => {
+            if(item.id === id){
+                item.done = true;
+            }
+        });
+        this.setState({list: newList});
     }
 
     render() {

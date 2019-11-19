@@ -1,7 +1,8 @@
 .ToDo_List {
     background-color: burlywood;
     width: 350px;
-    height: 650px;
+    overflow: auto;
+    padding-bottom: 5%;
 }
 
 .Task {
@@ -13,4 +14,12 @@
     bottom: -470px;
     right: -280px;
     position: relative;
+}
+
+.StruckLine {
+    text-decoration: line-through;
+}
+
+.Titles {
+    font-family: 'Indie Flower', cursive;
 }

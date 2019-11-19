@@ -1,7 +1,7 @@
 import React from 'react';
+import SaveIcon from '@material-ui/icons/Save';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton'
-import SaveIcon from '@material-ui/icons/Save';
 
 class AddTodoItem extends React.Component {
 
@@ -14,7 +14,7 @@ class AddTodoItem extends React.Component {
 
     }
 
-    handleChange = e => {
+    handleChange = (e) => {
         this.setState({
             task: e.target.value,
         });
@@ -27,8 +27,7 @@ class AddTodoItem extends React.Component {
         return (
             <div className="Task">
                 <TextField placeholder="Nova tarefa" onChange={this.handleChange}/>
-                <IconButton onClick={() => addItem(this.state.task)}
-                >
+                <IconButton onClick={() => addItem(this.state.task)} >
                     <SaveIcon />
                 </IconButton>
             </div>

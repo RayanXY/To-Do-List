@@ -3,7 +3,7 @@ import Box from '@material-ui/core/Box';
 
 const Titles = (props) => {
     return(
-        <Box 
+        <Box className="Titles"
             textAlign="center" m={1} 
             fontSize={props.size} 
             fontWeight={"fontWeightBold"} 
