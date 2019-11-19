@@ -1,0 +1,16 @@
+.ToDo_List {
+    background-color: burlywood;
+    width: 350px;
+    height: 650px;
+}
+
+.Task {
+    margin-left: 50px;
+    position: relative;
+}
+
+.AddItem {
+    bottom: -470px;
+    right: -280px;
+    position: relative;
+}
