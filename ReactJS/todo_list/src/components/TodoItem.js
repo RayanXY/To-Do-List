@@ -10,18 +10,18 @@ class TodoItem extends React.Component {
 
     render (){
 
-        const { item, deleteItem, doneItem } = this.props;
+        const { task, deleteItem, doneItem } = this.props;
 
         return(
             <ListItem>
                 
-                <ListItemText className={item.done ? "StruckLine" : ""} primary={item.task} />
+                <ListItemText className={task.done ? "StruckLine" : "Titles"} primary={task.description} />
                 
-                <IconButton edge="end" onClick={ () => doneItem(item.id)} >
-                    <DoneIcon />
+                <IconButton edge="end" onClick={ () => doneItem(task.id)} >
+                    <DoneIcon color=""/>
                 </IconButton>
 
-                <IconButton edge="end" onClick={() => deleteItem(item.id)}>
+                <IconButton edge="end" onClick={() => deleteItem(task.id)}>
                     <DeleteIcon color="secondary" />
                 </IconButton>
 
