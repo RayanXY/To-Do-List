@@ -9,12 +9,12 @@ public class Task {
 	
 	@Id 
 	@GeneratedValue
-	private Long id;
+	private Integer id;
 	private String description;
 	private boolean done;
 
 	/// Getters
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 	
@@ -27,7 +27,7 @@ public class Task {
 	}
 	
 	/// Setters
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	
