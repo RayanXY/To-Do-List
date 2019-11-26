@@ -17,8 +17,8 @@ class TodoItem extends React.Component {
                 
                 <ListItemText className={task.done ? "StruckLine" : "Titles"} primary={task.description} />
                 
-                <IconButton edge="end" onClick={ () => doneItem(task.id)} >
-                    <DoneIcon color=""/>
+                <IconButton edge="end" onClick={() => doneItem(task)} >
+                    <DoneIcon color={task.done ? "secondary" : "primary"}/>
                 </IconButton>
 
                 <IconButton edge="end" onClick={() => deleteItem(task.id)}>

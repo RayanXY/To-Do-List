@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,14 +27,19 @@ public class TaskController {
 		return taskService.showList();
 	}
 	
-	/// SAVE OR UPDATE A TASK ON THE LIST
-	@PostMapping()
-	private int saveTask(@RequestBody Task task) {
-		taskService.saveUpdate(task);
-		return task.getId();
+	/// SAVE
+	@PostMapping
+	private void saveTask(@RequestBody Task task) {
+		taskService.save(task);
 	}
 	
-	/// DELETE A TASK FROM THE LIST
+	/// UPDATE
+	@PutMapping
+	private void update(@RequestBody Task task) {
+		taskService.update(task);
+	}
+	
+	/// DELETE
 	@DeleteMapping("/{id}")
 	private void deleteTask(@PathVariable("id") int id) {
 		taskService.delete(id);

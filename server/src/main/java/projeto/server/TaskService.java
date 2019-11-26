@@ -18,12 +18,18 @@ public class TaskService {
 		return taskRepository.findAll();
 	}
 	
-	/// SAVE OR UPDATE A TASK ON THE LIST
-	public void saveUpdate(Task task) {
+	/// SAVE
+	public void save(Task task) {
 		taskRepository.save(task);
 	}
 	
-	/// DELETE A TASK FROM THE LIST
+	/// UPDATE
+	public void update(Task task) {
+		task.setDone(!task.getDone());
+		taskRepository.save(task);
+	}
+	
+	/// DELETE
 	public void delete(Integer id) {
 		taskRepository.deleteById(id);
 	}

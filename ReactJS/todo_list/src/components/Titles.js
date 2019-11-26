@@ -7,7 +7,7 @@ const Titles = (props) => {
             textAlign="center" m={1} 
             fontSize={props.size} 
             fontWeight={"fontWeightBold"} 
-            lineHeight={2}
+            lineHeight={1.8}
         >
             {props.title}
         </Box>

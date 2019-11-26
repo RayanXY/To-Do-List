@@ -13,10 +13,6 @@ CREATE TABLE Todo_List (
 );
 ```
 
-## Ideia pra tela ##
-https://www.google.com/search?q=to+do+list&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiU5qz1peflAhWaDrkGHQyEDZ0Q_AUIEigB&biw=1920&bih=937#imgrc=P0YHndAB43AKqM:
-
-
 ## Funcionalidade ##
 Checkbox checado: a tarefa foi realizada e o textfield fica desabilitado (sem a opçãoo de editar;
 Checkbox não checado: tarefa aberta e podendo ser editada;

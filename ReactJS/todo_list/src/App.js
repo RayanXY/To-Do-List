@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css';
 import React from 'react';
 import axios from 'axios';
 import Titles from './components/Titles';
@@ -15,19 +15,11 @@ class App extends React.Component {
         axios.get("http://localhost:8080/tasks").then(response => response.data)
             .then((data) => {
                 this.setState({ list: data });
-                console.log(this.state.list);
             })
     }
 
-    componentDidMount(){
-        
+    componentDidMount(){      
         this.getListFromBD();
-        /*axios.get("http://localhost:8080/tasks").then(response => response.data)
-            .then((data) => {
-                this.setState({ list: data });
-                console.log(this.state.list);
-            })*/
-
     }
 
     /* 
@@ -39,14 +31,8 @@ class App extends React.Component {
         const item = {id: 0, description: newTask, done: 0};
         axios.post("http://localhost:8080/tasks", item)
              .then(res => {
-                 console.log(res.data);
                  this.getListFromBD();
              })
-        /*this.newId++;
-        const newItem = {id: this.newId, task: newTask, done: false};
-        const newList = [...this.state.list].map( l => Object.assign({}, l));
-        newList.push(newItem);
-        this.setState({list: newList});*/
     }
 
     /* 
@@ -54,15 +40,11 @@ class App extends React.Component {
      * Deleta o item com o ID passado
      * @param id - O ID da tarefa a ser excluída
      */
-    deleteItem = (id) =>{
-        axios.delete(`http://localhost:8080/tasks/${id}`)
+    deleteItem = (deleteTaskID) =>{
+        axios.delete(`http://localhost:8080/tasks/${deleteTaskID}`)
         .then(res => {
-            console.log(res.data);
             this.getListFromBD();
         });
-        
-        /*const newList = [...this.state.list].map( l => Object.assign({}, l)).filter( l => l.id !== id)
-        this.setState({list: newList});*/
     }
 
     /* 
@@ -70,14 +52,11 @@ class App extends React.Component {
      * Atualiza a tarefa para 'feita'
      * @param id - O ID da tarefa concluída
      */
-    doneItem = (id) => {
-       const newList = [...this.state.list].map( l => Object.assign({}, l));
-        newList.forEach((item) => {
-            if(item.id === id){
-                item.done = true;
-            }
-        });
-        this.setState({list: newList});
+    doneItem = (updateTask) => {
+        axios.put("http://localhost:8080/tasks/", updateTask)
+        .then(res => {
+            this.getListFromBD();
+        })
     }
 
     render() {

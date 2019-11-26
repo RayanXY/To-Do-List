@@ -10,12 +10,6 @@
     position: relative;
 }
 
-.AddItem {
-    bottom: -470px;
-    right: -280px;
-    position: relative;
-}
-
 .StruckLine {
     text-decoration: line-through;
 }

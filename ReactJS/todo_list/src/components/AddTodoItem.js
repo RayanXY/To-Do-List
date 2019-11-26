@@ -16,7 +16,7 @@ class AddTodoItem extends React.Component {
 
     handleChange = (e) => {
         this.setState({
-            task: e.target.value,
+            task: e.target.value
         });
     }
 
